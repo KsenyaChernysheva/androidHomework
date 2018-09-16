@@ -9,41 +9,40 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
-    private Button btn_back;
-    private Button btn_cancel;
-    private EditText et_name;
-    private EditText et_phone;
-    private EditText et_mail;
+    private Button btnBack;
+    private Button btnCancel;
+    private EditText etName;
+    private EditText etPhone;
+    private EditText etMail;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        btn_back = findViewById(R.id.btn_back);
-        btn_cancel = findViewById(R.id.btn_cancel);
-        et_name = findViewById(R.id.et_name);
-        et_phone = findViewById(R.id.et_phone);
-        et_mail = findViewById(R.id.et_email);
+        btnBack = findViewById(R.id.btnBack);
+        btnCancel = findViewById(R.id.btnCancel);
+        etName = findViewById(R.id.etName);
+        etPhone = findViewById(R.id.etPhone);
+        etMail = findViewById(R.id.etEmail);
 
         Intent intent = getIntent();
-        et_name.setText(intent.getStringExtra(MainActivity.KEY_NAME));
-        et_phone.setText(intent.getStringExtra(MainActivity.KEY_PHONE));
-        et_mail.setText(intent.getStringExtra(MainActivity.KEY_MAIL));
+        etName.setText(intent.getStringExtra(MainActivity.KEY_NAME));
+        etPhone.setText(intent.getStringExtra(MainActivity.KEY_PHONE));
+        etMail.setText(intent.getStringExtra(MainActivity.KEY_MAIL));
 
-        btn_back.setOnClickListener(view -> {
+        btnBack.setOnClickListener(view -> {
             Intent perehod2 = new Intent();
-            perehod2.putExtra(MainActivity.KEY_NAME,et_name.getText().toString());
-            perehod2.putExtra(MainActivity.KEY_PHONE,et_phone.getText().toString());
-            perehod2.putExtra(MainActivity.KEY_MAIL,et_mail.getText().toString());
-            setResult(RESULT_OK,perehod2);
+            perehod2.putExtra(MainActivity.KEY_NAME, etName.getText().toString());
+            perehod2.putExtra(MainActivity.KEY_PHONE, etPhone.getText().toString());
+            perehod2.putExtra(MainActivity.KEY_MAIL, etMail.getText().toString());
+            setResult(RESULT_OK, perehod2);
             finish();
         });
 
-        btn_cancel.setOnClickListener(view -> {
+        btnCancel.setOnClickListener(view -> {
             setResult(RESULT_CANCELED);
             finish();
         });
     }
-
 }
