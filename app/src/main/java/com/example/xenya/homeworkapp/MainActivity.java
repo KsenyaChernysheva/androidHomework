@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSend = findViewById(R.id.btnSend);
-        btnUpdate = findViewById(R.id.btnUpdate);
-        tName = findViewById(R.id.textName);
-        tPhone = findViewById(R.id.textPhone);
-        tMail = findViewById(R.id.textEmail);
+        btnSend = findViewById(R.id.btn_send);
+        btnUpdate = findViewById(R.id.btn_update);
+        tName = findViewById(R.id.text_name);
+        tPhone = findViewById(R.id.text_phone);
+        tMail = findViewById(R.id.text_email);
 
         btnUpdate.setOnClickListener(v -> {
             Intent intentToSecondAct = new Intent(this, SecondActivity.class);

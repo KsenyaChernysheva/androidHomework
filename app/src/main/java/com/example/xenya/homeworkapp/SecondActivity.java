@@ -20,11 +20,11 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        btnBack = findViewById(R.id.btnBack);
-        btnCancel = findViewById(R.id.btnCancel);
-        etName = findViewById(R.id.etName);
-        etPhone = findViewById(R.id.etPhone);
-        etMail = findViewById(R.id.etEmail);
+        btnBack = findViewById(R.id.btn_back);
+        btnCancel = findViewById(R.id.btn_cancel);
+        etName = findViewById(R.id.et_name);
+        etPhone = findViewById(R.id.et_phone);
+        etMail = findViewById(R.id.et_email);
 
         Intent intent = getIntent();
         etName.setText(intent.getStringExtra(MainActivity.KEY_NAME));
