@@ -50,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_TEXT, tName.getText().toString() + tPhone.getText().toString() + tMail.getText().toString());
             startActivityForResult(intent, SEND_REQUEST_CODE);
         });
+
+        Intent intent = getIntent();
+        switch (intent.getAction()) {
+            case Intent.ACTION_SEND:
+                Toast.makeText(this, intent.getStringExtra(Intent.EXTRA_TEXT), Toast.LENGTH_SHORT).show();
+                break;
+            case Intent.ACTION_VIEW:
+                Toast.makeText(this, intent.getDataString(), Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 
     @Override
