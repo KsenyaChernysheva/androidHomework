@@ -1,28 +1,21 @@
 package com.example.xenya.navigationdrawer;
 
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.view.View;
-
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, NavDrawableTitleChangable {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +56,15 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_profile) {
-            fragmentClass = ProfileFragment.class;
-        } else if (id == R.id.nav_news) {
-            fragmentClass = NewsFragment.class;
-        } else if (id == R.id.nav_gallery) {
-            fragmentClass = GalleryFragment.class;
+        switch (id) {
+            case R.id.nav_profile:
+                fragmentClass = ProfileFragment.class;
+                break;
+            case R.id.nav_news:
+                fragmentClass = NewsFragment.class;
+                break;
+            case R.id.nav_gallery:
+                fragmentClass = GalleryFragment.class;
         }
 
         try {
@@ -90,8 +86,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void setNameMail(String name, String mail) {
-        ((TextView) findViewById(R.id.tv_name)).setText(name);
-        ((TextView) findViewById(R.id.tv_mail)).setText(mail);
+    @Override
+    public void setTitles(String primary, String secondary) {
+        ((TextView) findViewById(R.id.tv_name)).setText(primary);
+        ((TextView) findViewById(R.id.tv_mail)).setText(secondary);
     }
 }

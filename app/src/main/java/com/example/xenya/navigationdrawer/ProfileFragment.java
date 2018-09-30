@@ -59,7 +59,9 @@ public class ProfileFragment extends Fragment {
                         tName.setText(name);
                         tPhone.setText(phone);
                         tMail.setText(mail);
-                        ((MainActivity) getActivity()).setNameMail(name, mail);
+                        if(getActivity() instanceof NavDrawableTitleChangable) {
+                            ((NavDrawableTitleChangable) getActivity()).setTitles(name, mail);
+                        }
                     }
                 });
                 updateDialogFragment.show(getChildFragmentManager(), "");
