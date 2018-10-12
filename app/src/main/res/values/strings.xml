@@ -1,3 +1,13 @@
 <resources>
+    <string name="frag1_text">BottomNav</string>
+    <string name="frag2_text">News</string>
+    <string name="frag3_text">Gallery</string>
     <string name="app_name">NavigationDrawer</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Students</string>
+    <string name="title_notifications">News</string>
+    <string name="menu_by_name">By name</string>
+    <string name="menu_by_phone">By phone</string>
+    <string name="label_student">Student profile</string>
 </resources>
