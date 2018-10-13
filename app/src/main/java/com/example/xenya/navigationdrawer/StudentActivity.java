@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StudentActivity extends AppCompatActivity {
     private static final String KEY_STUDENT = "STUDENT";
+
     private ImageView ivStudent;
     private TextView tvStudentName;
     private TextView tvStudentPhone;

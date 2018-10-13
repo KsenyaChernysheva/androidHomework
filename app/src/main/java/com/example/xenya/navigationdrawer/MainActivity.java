@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                     .replace(R.id.container, fragment)
                     .addToBackStack(null)
                     .commit();
-            item.setChecked(true);
             setTitle(item.getTitle());
 
             return true;
