@@ -22,8 +22,8 @@
         <activity
             android:name=".StudentActivity"
             android:label="@string/label_student" />
+        <activity android:name=".WakedUpActivity" />
 
         <receiver android:name=".AlarmBroadcastReciever" />
-        <activity android:name=".WakedUpActivity" />
     </application>
 </manifest>
