@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="theme_names">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>Jojo pReference</item>
+    </array>
+
+    <array name="theme_values">
+        <item>AppTheme</item>
+        <item>AppThemeDark</item>
+        <item>AppThemeJojo</item>
+    </array>
+
+</resources>

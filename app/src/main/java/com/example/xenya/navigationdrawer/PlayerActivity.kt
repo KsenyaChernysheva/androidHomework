@@ -7,10 +7,9 @@ import android.content.ServiceConnection
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
-import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_player.*
 
-class PlayerActivity : AppCompatActivity() {
+class PlayerActivity : ThemedAppCompatActivity() {
 
     companion object {
         const val KEY_POSITION = "position"
@@ -32,7 +31,6 @@ class PlayerActivity : AppCompatActivity() {
 
         position = intent.getIntExtra(KEY_POSITION, 0)
 
-
         iv_rewind.setOnClickListener {
             mService?.prev()
             fillData()
@@ -50,6 +48,7 @@ class PlayerActivity : AppCompatActivity() {
         iv_stop.setOnClickListener {
             mService?.stop()
             fillData()
+            stopService(Intent(this, MediaService::class.java))
         }
 
         iv_forward.setOnClickListener {
@@ -57,6 +56,10 @@ class PlayerActivity : AppCompatActivity() {
             fillData()
         }
 
+        startMediaService()
+    }
+
+    private fun startMediaService() {
         val intent = Intent(this, MediaService::class.java)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(intent)

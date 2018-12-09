@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/list">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,6 +27,10 @@
             android:exported="true" />
 
         <activity android:name=".PlayerActivity" />
+        <activity
+            android:name=".PreferenceActivity"
+            android:label="@string/settings" />
+        <activity android:name=".ThemedAppCompatActivity" />
     </application>
 
 </manifest>
